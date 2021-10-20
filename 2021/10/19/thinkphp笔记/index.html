@@ -20,14 +20,15 @@
 <meta property="og:description" content="安装使用composer安装打开composer命令行 使用cd .. 返回上一级目录 更改阿里源 1composer config -g repo.packagist composer https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;composer&#x2F;  使用命令安装 1composer create-project topthink&#x2F;think www.1.com  目录结构123456">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-19T05:40:51.000Z">
-<meta property="article:modified_time" content="2021-10-19T08:58:36.464Z">
+<meta property="article:modified_time" content="2021-10-20T02:24:50.376Z">
 <meta property="article:author" content="天气有点凉">
+<meta property="article:tag" content="PHP">
 <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-    <link rel="stylesheet" href="/css/style.css?v=1634633933714">
+    <link rel="stylesheet" href="/css/style.css?v=1634696714071">
      
     
-    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1634633933714">
+    <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1634696714072">
     
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -53,7 +54,7 @@
     </div>
     <div class="nexmoe-count">
         <div><span>文章</span>4</div>
-        <div><span>标签</span>0</div>
+        <div><span>标签</span>1</div>
         <div><span>分类</span>0</div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
@@ -108,6 +109,13 @@
 
     
     
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/PHP/" style="font-size: 10px;">PHP</a>
+    </div>
+    
+  </div>
+
     
 </aside>
     <div class="nexmoe-copyright">
@@ -132,8 +140,8 @@
       
       <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2021年10月19日</a>
-    <a><i class="nexmoefont icon-areachart"></i>518 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.1k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 5 分钟</a>
 </div>
 
       
@@ -152,7 +160,12 @@
 
 
 <p>访问<code>www.1.com/public/index.php</code> </p>
-<h4 id="将访问地址改为www-1-com"><a href="#将访问地址改为www-1-com" class="headerlink" title="将访问地址改为www.1.com"></a>将访问地址改为<a target="_blank" rel="noopener" href="http://www.1.com/">www.1.com</a></h4><p>将<code>require __DIR__ . &#39;/../vendor/autoload.php&#39;;</code>  改为<code>require __DIR__ . &#39;/vendor/autoload.php&#39;;</code> </p>
+<h4 id="将访问地址改为www-1-com"><a href="#将访问地址改为www-1-com" class="headerlink" title="将访问地址改为www.1.com"></a>将访问地址改为<a target="_blank" rel="noopener" href="http://www.1.com/">www.1.com</a></h4><ol>
+<li><p>将public目录下的文件移动到根目录下</p>
+</li>
+<li><p>更改index.php，将<code>require __DIR__ . &#39;/../vendor/autoload.php&#39;;</code>  改为<code>require __DIR__ . &#39;/vendor/autoload.php&#39;;</code> </p>
+</li>
+</ol>
 <h2 id="安装多应用"><a href="#安装多应用" class="headerlink" title="安装多应用"></a>安装多应用</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require topthink/think-multi-app</span><br></pre></td></tr></table></figure>
 
 <h4 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">├─app 应用目录</span><br><span class="line">│  ├─index              主应用</span><br><span class="line">│  │  ├─controller      控制器目录</span><br><span class="line">│  │  ├─model           模型目录</span><br><span class="line">│  │  ├─view            视图目录</span><br><span class="line">│  │  ├─config          配置目录</span><br><span class="line">│  │  ├─route           路由目录</span><br><span class="line">│  │  └─ ...            更多类库目录</span><br><span class="line">│  │ </span><br><span class="line">│  ├─admin              后台应用</span><br><span class="line">│  │  ├─controller      控制器目录</span><br><span class="line">│  │  ├─model           模型目录</span><br><span class="line">│  │  ├─view            视图目录</span><br><span class="line">│  │  ├─config          配置目录</span><br><span class="line">│  │  ├─route           路由目录</span><br><span class="line">│  │  └─ ...            更多类库目录</span><br></pre></td></tr></table></figure>
@@ -164,6 +177,40 @@
 
 <p>更改完成后重启nginx</p>
 <h2 id="开启调试模式"><a href="#开启调试模式" class="headerlink" title="开启调试模式"></a>开启调试模式</h2><p>将根目录下<code>.example.env</code>改为<code>.env</code> </p>
+<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><h3 id="Db类新增数据"><a href="#Db类新增数据" class="headerlink" title="Db类新增数据"></a>Db类新增数据</h3><h4 id="引入Db类ues-think-facade-Db"><a href="#引入Db类ues-think-facade-Db" class="headerlink" title="引入Db类ues think\facade\Db;"></a>引入Db类<code>ues think\facade\Db;</code></h4><h4 id="添加一条数据"><a href="#添加一条数据" class="headerlink" title="添加一条数据"></a>添加一条数据</h4><p>可以使用<code>save</code>方法统一写入数据，自动判断是新增还是更新数据（以写入数据中是否存在主键数据为依据）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$data = [&#x27;1&#x27; =&gt; &#x27;title&#x27;, &#x27;2&#x27; =&gt; &#x27;writer&#x27;];</span><br><span class="line">Db::name(&#x27;article&#x27;)-&gt;save($data);#user是数据表名，不需要带表前缀</span><br></pre></td></tr></table></figure>
+
+<p>或者使用 <code>insert</code> 方法向数据库提交数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$data = [&#x27;foo&#x27; =&gt; &#x27;bar&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo&#x27;];</span><br><span class="line">Db::name(&#x27;user&#x27;)-&gt;insert($data);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>insert</code> 方法添加数据成功返回添加成功的条数，通常情况返回 1</p>
+</blockquote>
+<blockquote>
+<p>如果你的数据表里面没有<code>foo</code>或者<code>bar</code>字段，那么就会抛出异常。</p>
+</blockquote>
+<p>如果不希望抛出异常，可以使用下面的方法（<code> strict(false)-&gt;</code>）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$data = [&#x27;foo&#x27; =&gt; &#x27;bar&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo&#x27;];</span><br><span class="line">Db::name(&#x27;user&#x27;)-&gt;strict(false)-&gt;insert($data);</span><br></pre></td></tr></table></figure>
+
+<p>不存在字段的值将会直接抛弃。</p>
+<p>添加数据后如果需要返回新增数据的自增主键，可以使用<code>insertGetId</code>方法新增数据并返回主键值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$userId = Db::name(&#x27;user&#x27;)-&gt;insertGetId($data);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>insertGetId</code> 方法添加数据成功返回添加数据的自增主键</p>
+</blockquote>
+<h4 id="插入多条数据"><a href="#插入多条数据" class="headerlink" title="插入多条数据"></a>插入多条数据</h4><p>添加多条数据直接向 Db 类的 <code>insertAll</code> 方法传入需要添加的数据（通常是二维数组）即可。</p>
+<blockquote>
+<p>一维数组和二维数组的区别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">单行或单列的数组，称为一维数组，多行多列（含2行2列）的数组是二维数组。</span><br><span class="line">一维数组：</span><br><span class="line">[&#x27;foo&#x27; =&gt; &#x27;bar&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo&#x27;]</span><br><span class="line">二维数组：</span><br><span class="line">[</span><br><span class="line">    [&#x27;foo&#x27; =&gt; &#x27;bar&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo&#x27;],</span><br><span class="line">    [&#x27;foo&#x27; =&gt; &#x27;bar1&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo1&#x27;],</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$data = [</span><br><span class="line">    [&#x27;foo&#x27; =&gt; &#x27;bar&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo&#x27;],</span><br><span class="line">    [&#x27;foo&#x27; =&gt; &#x27;bar1&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo1&#x27;],</span><br><span class="line">    [&#x27;foo&#x27; =&gt; &#x27;bar2&#x27;, &#x27;bar&#x27; =&gt; &#x27;foo2&#x27;]</span><br><span class="line">];</span><br><span class="line">Db::name(&#x27;user&#x27;)-&gt;insertAll($data);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>insertAll</code>方法添加数据成功返回添加成功的条数</p>
+</blockquote>
 
   </article>
 
@@ -182,6 +229,8 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow">
     
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/PHP/" rel="tag">PHP</a>
     
 </div>
 
@@ -237,7 +286,7 @@
 
  
 
-<script async src="/js/app.js?v=1634633933718"></script>
+<script async src="/js/app.js?v=1634696714076"></script>
 
 
 
